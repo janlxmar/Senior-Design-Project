@@ -6,7 +6,7 @@ from temp import read_humidity  # Import the function
 # Create an empty DataFrame
 df = pd.DataFrame(columns=["Time", "Temperature (°C)", "Humidity (%)"])
 
-print("🔄 Starting sensor monitoring...")
+print("Starting sensor monitoring...")
 
 try:
     while True:
