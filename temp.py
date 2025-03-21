@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import time
-from temp import read_humidity  # Import the function
+
 
 # Create an empty DataFrame
 df = pd.DataFrame(columns=["Time", "Temperature (°C)", "Humidity (%)"])
