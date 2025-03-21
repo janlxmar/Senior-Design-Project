@@ -1,28 +1,21 @@
-import os
+import board
+import adafruit_dht
 import pandas as pd
-import time
 
+def read_humidity():
+    """Reads humidity and temperature, then releases the sensor."""
+    try:
+        # **Initialize sensor inside function to avoid conflicts**
+        dht_sensor = adafruit_dht.DHT22(board.D4)
 
-# Create an empty DataFrame
-df = pd.DataFrame(columns=["Time", "Temperature (°C)", "Humidity (%)"])
+        temperature = dht_sensor.temperature
+        humidity = dht_sensor.humidity
+        timestamp = pd.Timestamp.now().strftime("%H:%M:%S")
 
-print("Starting sensor monitoring...")
+        # **Release sensor after reading to prevent message queue errors**
+        dht_sensor.exit()
 
-try:
-    while True:
-        humidity_data = read_humidity()
-
-        if humidity_data:
-            new_row = pd.DataFrame([humidity_data], columns=df.columns)
-            df = pd.concat([df, new_row], ignore_index=True)
-
-            # **Clear screen before printing**
-            os.system("clear")
-            print(df.tail(10).to_string(index=False))  # Show last 10 readings
-        else:
-            print("No valid humidity data received.")
-
-        time.sleep(2)
-
-except KeyboardInterrupt:
-    print("\nSensor monitoring stopped.")
+        if temperature is not None and humidity is not None:
+            return [timestamp, temperature, humidity]
+    except RuntimeError:
+        return None  # Ignore sensor read failures
