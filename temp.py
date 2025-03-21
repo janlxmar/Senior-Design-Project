@@ -1,17 +1,20 @@
 import board
 import adafruit_dht
-import time
 import pandas as pd
-
-# Initialize the DHT sensor (DHT22 on GPIO4)
-dht_sensor = adafruit_dht.DHT22(board.D4)
+import time
 
 def read_humidity():
     """Reads humidity and temperature, returns formatted data."""
     try:
+        # **Move sensor initialization here** (prevents multiple conflicts)
+        dht_sensor = adafruit_dht.DHT22(board.D4)
+
         temperature = dht_sensor.temperature
         humidity = dht_sensor.humidity
         timestamp = pd.Timestamp.now().strftime("%H:%M:%S")
+
+        # **Release sensor to avoid lockups**
+        dht_sensor.exit()
 
         if temperature is not None and humidity is not None:
             return [timestamp, temperature, humidity]
