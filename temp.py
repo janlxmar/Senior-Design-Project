@@ -1,22 +1,28 @@
-import board
-import adafruit_dht
+import os
 import pandas as pd
 import time
+from temp import read_humidity  # Import the function
 
-def read_humidity():
-    """Reads humidity and temperature, returns formatted data."""
-    try:
-        # **Move sensor initialization here** (prevents multiple conflicts)
-        dht_sensor = adafruit_dht.DHT22(board.D4)
+# Create an empty DataFrame
+df = pd.DataFrame(columns=["Time", "Temperature (°C)", "Humidity (%)"])
 
-        temperature = dht_sensor.temperature
-        humidity = dht_sensor.humidity
-        timestamp = pd.Timestamp.now().strftime("%H:%M:%S")
+print("🔄 Starting sensor monitoring...")
 
-        # **Release sensor to avoid lockups**
-        dht_sensor.exit()
+try:
+    while True:
+        humidity_data = read_humidity()
 
-        if temperature is not None and humidity is not None:
-            return [timestamp, temperature, humidity]
-    except RuntimeError:
-        return None  # Ignore errors and return nothing
+        if humidity_data:
+            new_row = pd.DataFrame([humidity_data], columns=df.columns)
+            df = pd.concat([df, new_row], ignore_index=True)
+
+            # **Clear screen before printing**
+            os.system("clear")
+            print(df.tail(10).to_string(index=False))  # Show last 10 readings
+        else:
+            print("No valid humidity data received.")
+
+        time.sleep(2)
+
+except KeyboardInterrupt:
+    print("\nSensor monitoring stopped.")
