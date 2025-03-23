@@ -1,3 +1,5 @@
+
+
 import board
 import adafruit_dht
 import time
@@ -14,15 +16,15 @@ print("Humidity Sensor Initialized!")
 try:
     while True:
         try:
-            # Read temperature and humidity
+          
             temperature = dht_sensor.temperature
             humidity = dht_sensor.humidity
             timestamp = pd.Timestamp.now()
 
-            # Store the new reading in a dictionary
+            # store the new reading in a dictionary
             new_data = {"Timestamp": timestamp, "Temperature (°C)": temperature, "Humidity (%)": humidity}
 
-            # Append to DataFrame
+            # append to DataFrame
             df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
 
             # Display the latest DataFrame
