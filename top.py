@@ -1,29 +1,44 @@
-import os
-import pandas as pd
+
+
+
+
+'''
 import time
-from temp import read_humidity
+import pandas as pd
+from tabulate import tabulate
+from temp import read_temp_humidity
+from soil import read_soil
+from level import read_level
 
-# Create an empty DataFrame with correctly named columns
-df = pd.DataFrame(columns=["Time", "Temperature (C)", "Humidity (%)"])
+# Initialize DataFrame
+df = pd.DataFrame(columns=["Time", "Temperature (°C)", "Humidity (%)", "Moisture (%)", "Liquid Level"])
 
-print("🔄 Starting sensor monitoring...")
+print("Starting sensor monitoring...\n")
 
 try:
     while True:
-        humidity_data = read_humidity()
+        timestamp = time.strftime("%H:%M:%S")
+        temp, humid = read_temp_humidity()
+        moisture = read_soil()
+        level = read_level()
 
-        if humidity_data:
-            new_row = pd.DataFrame([humidity_data], columns=df.columns)
-            df = pd.concat([df, new_row], ignore_index=True)
+        # Combine all readings
+        new_data = {
+            "Time": timestamp,
+            "Temperature (°C)": temp,
+            "Humidity (%)": humid,
+            "Moisture (%)": moisture["Moisture (%)"],
+            "Liquid Level": level["Liquid Level"]
+        }
 
-            # **Clear screen & print formatted DataFrame**
-            os.system("clear")
-            print(df.tail(10).to_markdown(index=False))  # Proper table formatting
+        df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
 
-        else:
-            print("No valid humidity data received.")
+        # Clear terminal and display latest 10 readings
+        print("\033c", end="")  # ANSI escape to clear screen
+        print(tabulate(df.tail(10), headers="keys", tablefmt="github"))
 
         time.sleep(2)
 
 except KeyboardInterrupt:
-    print("\nSensor monitoring stopped.")
+    print("\nMonitoring stopped.")
+'''
