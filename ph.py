@@ -4,21 +4,25 @@ import digitalio
 import board
 from adafruit_mcp3xxx.mcp3008 import MCP3008
 from adafruit_mcp3xxx.analog_in import AnalogIn
-import adafruit_mcp3xxx.mcp3008 as MCP
 
-spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
+# SPI setup
+spi = busio.SPI(clock=board.SCLK, MISO=board.MISO, MOSI=board.MOSI)
 cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP3008(spi, cs)
 
-# channel 3 for the pH sensor
+# Use CH3 (channel 3)
 chan = AnalogIn(mcp, 3)
 
 def read_ph():
     voltage = chan.voltage
-    ph = -6.0 * voltage + 22.0 
-    return round(ph, 2)
+    ph = round(-6.0 * voltage + 22.0, 2)
+    return voltage, ph
 
-while True:
-    ph_value = read_ph()
-    print("pH:", ph_value)
-    time.sleep(1)
+if __name__ == "__main__":
+    try:
+        while True:
+            voltage, ph_val = read_ph()
+            print(f"Raw: {chan.value} | Voltage: {voltage:.2f} V | pH: {ph_val}")
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\nStopped.")

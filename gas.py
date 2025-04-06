@@ -4,33 +4,24 @@ import busio
 import adafruit_sgp30
 
 def read_gas():
-    # Set up I2C connection
-    i2c = busio.I2C(board.SCL, board.SDA)
-    sgp30 = adafruit_sgp30.Adafruit_SGP30(i2c)
-
-    # Wait a moment before initializing
-    time.sleep(1.5)
-    sgp30.iaq_init()
-    time.sleep(1.5)  # Allow sensor to stabilize
-
-    # Optional: set absolute humidity if you have it
-    # sgp30.set_ambient_humidity(relative_humidity)
-
-    # Wait before reading (required)
-    time.sleep(1)
-
-    # Read values
-    eCO2 = sgp30.eCO2
-    TVOC = sgp30.TVOC
-
-    return {"eCO2 (ppm)": eCO2, "TVOC (ppb)": TVOC}
-
-# Run standalone test
-if __name__ == "__main__":
     try:
-        while True:
-            gas_data = read_gas()
-            print(f"eCO2: {gas_data['eCO2 (ppm)']} ppm\tTVOC: {gas_data['TVOC (ppb)']} ppb")
-            time.sleep(1)
-    except KeyboardInterrupt:
-        print("\nStopped.")
+        i2c = busio.I2C(board.SCL, board.SDA)
+        sgp30 = adafruit_sgp30.Adafruit_SGP30(i2c)
+        sgp30.iaq_init()
+        time.sleep(1)
+        co2 = sgp30.eCO2
+        tvoc = sgp30.TVOC
+        return {
+            "CO2": f"{co2} ppm",
+            "TVOC": f"{tvoc} ppb"
+        }
+    except Exception as e:
+        print(f"Gas sensor initialization failed: {e}")
+        return {
+            "CO2": "\033[91mError\033[0m",
+            "TVOC": "\033[91mError\033[0m"
+        }
+        
+if __name__ == "__main__":
+    result = read_gas()
+    print(f"CO2: {result['CO2']} | TVOC: {result['TVOC']}")
