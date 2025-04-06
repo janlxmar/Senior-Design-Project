@@ -5,12 +5,12 @@ from adafruit_mcp3xxx.mcp3008 import MCP3008
 from adafruit_mcp3xxx.analog_in import AnalogIn
 from digitalio import DigitalInOut
 
-# Set up SPI and MCP3008
+# set up SPI and MCP3008
 spi = busio.SPI(clock=board.SCLK, MISO=board.MISO, MOSI=board.MOSI)
 cs = DigitalInOut(board.D5)
 mcp = MCP3008(spi, cs)
 
-# CH2 for the non-contact liquid level sensor
+# channel twooooooooooooo
 chan = AnalogIn(mcp, 2)
 
 def read_level():
@@ -18,7 +18,7 @@ def read_level():
     status = "Full" if voltage > 1.5 else "Low"
     return {"Liquid Level": status}
 
-# Optional test
+# just a test
 if __name__ == "__main__":
     while True:
         print(read_level())
