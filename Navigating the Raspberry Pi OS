@@ -39,3 +39,29 @@ The following files are attached inside the sdp folder (in particular order):
 The top.py file incorporates all of these modules and displays the data in one table.
 
 ***************************************************************************
+
+// How to enable certain communication protocols through the Terminal app:
+
+Step 1: Enter this command on the terminal:
+
+  sudo raspi-config
+
+Step 2: Click "3. Interface Options"
+Step 3: Enable the corresponding protocol
+Step 4: Enter the command to reboot the device:
+
+  sudo reboot
+
+***************************************************************************
+
+// How to check the I2C bus for connected devices:
+
+Step 1: Open terminal and enter the following code:
+
+  sudo i2cdetect -y 1
+
+** Note: In the gas sensor, the address should be 0x58.
+It shows address 0x58 because that’s the default and fixed 
+I²C address assigned by the manufacturer for the SGP30. **
+
+***************************************************************************
