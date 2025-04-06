@@ -1,3 +1,5 @@
+# we are no longer using the ph because of how stupidly annoying this is
+
 import time
 import busio
 import digitalio
@@ -5,12 +7,12 @@ import board
 from adafruit_mcp3xxx.mcp3008 import MCP3008
 from adafruit_mcp3xxx.analog_in import AnalogIn
 
-# SPI setup
+
 spi = busio.SPI(clock=board.SCLK, MISO=board.MISO, MOSI=board.MOSI)
 cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP3008(spi, cs)
 
-# Use CH3 (channel 3)
+
 chan = AnalogIn(mcp, 3)
 
 def read_ph():
