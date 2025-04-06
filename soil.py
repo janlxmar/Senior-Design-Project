@@ -6,12 +6,12 @@ import pandas as pd
 from adafruit_mcp3xxx.mcp3008 import MCP3008
 from adafruit_mcp3xxx.analog_in import AnalogIn
 
-# SPI setup
+
 spi = busio.SPI(clock=board.SCLK, MISO=board.MISO, MOSI=board.MOSI)
 cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP3008(spi, cs)
 
-# Create channel on CH0
+# channel zeroooooo
 chan = AnalogIn(mcp, 0)
 
 def read_soil():
@@ -20,7 +20,7 @@ def read_soil():
         "Moisture (%)": moisture_percent
     }
 
-# For testing individually
+# just to test
 if __name__ == "__main__":
     print("Reading soil moisture...\n")
     df = pd.DataFrame(columns=["Time", "Moisture (%)"])
