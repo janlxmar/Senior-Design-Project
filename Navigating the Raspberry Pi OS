@@ -5,19 +5,22 @@
   
 // How to run Python code in the terminal
 Step 1: Use the command to go to the following directory:
+
   /cd/home/laul/sdp
 
 Step 2: Run the python3 command along with the file name:
+
   python3 example.py
   
 ***************************************************************************
   
 // How to make files and edit them    
 Step 1: To create files, use the command:
-  nano example.py
 (Use the directory code above if you want to make the file in the "sdp" folder)
+
+  nano example.py
     
-Step 2: "Ctrl + O" to save
+Step 2: "Ctrl + O" to save (letter O not zero)
 Step 3: Click Enter
 Step 4: "Ctrl + X" to exit
 Step 5: Open that file and edit it through the "Geany Programmer Editor" app
@@ -32,5 +35,7 @@ The following files are attached inside the sdp folder (in particular order):
   level.py : liquid level
   light.py : voltage received from the resistor
   gas.py : CO2 and TVOC
+
+The top.py file incorporates all of these modules and displays the data in one table.
 
 ***************************************************************************
