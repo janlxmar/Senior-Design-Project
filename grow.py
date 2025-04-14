@@ -5,7 +5,8 @@ GROW_LIGHT_PIN = 17  # we are using GPIO 17 as the output (pin 11)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(GROW_LIGHT_PIN, GPIO.OUT)
-GPIO.output(GROW_LIGHT_PIN, GPIO.HIGH)  # assume high = not pressed
+GPIO.output(GROW_LIGHT_PIN, GPIO.HIGH)  # assume high = not pressed 
+# Turns on whatever is connected to GPIO17
 
 light_state = False  # False = light off, True = light on
 
