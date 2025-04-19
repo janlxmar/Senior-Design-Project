@@ -1,40 +1,28 @@
-import RPi.GPIO as GPIO
-import time
+from gpiozero import DigitalOutputDevice
+from time import sleep
 
-GROW_LIGHT_PIN = 17  # we are using GPIO 17 as the output (pin 11)
+# Setup
+grow_light = DigitalOutputDevice(17)  # GPIO 17 = physical pin 11
+light_state = False  # Track if it's on or off
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(GROW_LIGHT_PIN, GPIO.OUT)
-GPIO.output(GROW_LIGHT_PIN, GPIO.HIGH)  # assume high = not pressed 
-# Turns on whatever is connected to GPIO17
-
-light_state = False  # False = light off, True = light on
-
-# simulate a button press to toggle grow light power."""
-
-def toggle_grow_light(): 
+def toggle_grow_light():
+    global light_state
     print("Toggling grow light...")
-    GPIO.output(GROW_LIGHT_PIN, GPIO.LOW)   # Simulate press
-    time.sleep(0.2)
-    GPIO.output(GROW_LIGHT_PIN, GPIO.HIGH)  # Release button
-    time.sleep(0.2)
-
-# turn on the grow light (only if it's off)
+    grow_light.off()  # Simulate button press
+    sleep(0.2)
+    grow_light.on()   # Release button
+    sleep(0.2)
+    light_state = not light_state  # Flip the state
 
 def turn_on_light():
     global light_state
     if not light_state:
         toggle_grow_light()
-        light_state = True
-
-# turn off the grow light (only if it's on)
 
 def turn_off_light():
     global light_state
     if light_state:
         toggle_grow_light()
-        light_state = False
-        
-# clean up GPIO safely when shutting down
-def cleanup():
-    GPIO.cleanup()
+
+def get_light_status():
+    return "On" if light_state else "Off"
