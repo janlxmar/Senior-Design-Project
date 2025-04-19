@@ -1,0 +1,38 @@
+from gpiozero import DigitalOutputDevice
+from time import sleep
+
+# Setup
+grow_light = DigitalOutputDevice(17)  # GPIO 17 = physical pin 11
+light_state = False  # Track if it's on or off
+
+def run_lights(bool state):
+    global light_state
+    if(state && not light_state):
+        turn_on_light()
+    if(not state && light_state):
+        turn_off_light
+    else:
+        state=state
+        light_state=light_state
+
+def toggle_grow_light():
+    global light_state
+    print("Toggling grow light...")
+    grow_light.off()  # Simulate button press
+    sleep(0.2)
+    grow_light.on()   # Release button
+    sleep(0.2)
+    light_state = not light_state  # Flip the state
+
+def turn_on_light():
+    global light_state
+    if not light_state:
+        toggle_grow_light()
+
+def turn_off_light():
+    global light_state
+    if light_state:
+        toggle_grow_light()
+
+def get_light_status():
+    return "On" if light_state else "Off"
