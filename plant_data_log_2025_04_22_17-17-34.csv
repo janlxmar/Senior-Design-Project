@@ -1,0 +1,108 @@
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:34,21.7,49.1,66.7,1.69,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:37,21.7,49.0,66.7,2.82,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:39,21.7,48.8,66.7,1.68,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:42,21.7,48.7,66.7,2.82,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:45,21.7,48.4,66.6,1.67,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:47,21.7,48.4,66.6,2.82,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:50,21.7,48.3,66.7,1.67,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:53,21.7,48.1,66.8,2.81,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:55,21.6,48.1,66.6,1.67,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:17:58,21.7,48.0,66.6,2.81,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:01,21.6,47.9,66.7,1.66,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:03,21.7,47.9,66.7,2.82,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:06,21.7,47.8,66.7,1.68,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:09,21.7,47.8,66.7,2.82,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:11,21.7,47.7,66.7,1.68,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:14,21.6,47.7,66.6,2.81,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:17,21.7,47.6,66.7,1.51,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:19,21.6,47.6,60.7,2.66,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:22,21.6,47.6,62.6,1.47,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:25,21.6,47.6,50.7,2.69,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:27,21.6,48.2,47.2,1.48,Watering,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:31,21.6,48.9,47.8,2.52,Watering,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:36,21.6,50.0,67.5,1.47,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:38,21.6,51.0,67.7,2.62,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:41,21.6,51.6,67.8,1.53,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:44,21.6,52.0,67.6,2.62,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:46,21.6,52.2,67.5,1.58,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:49,21.6,52.2,67.6,2.62,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:52,21.6,52.2,67.5,1.48,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:54,21.6,52.2,67.4,2.63,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:18:57,21.6,52.9,67.5,1.54,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:00,21.6,53.9,67.4,2.82,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:02,21.6,54.5,67.1,1.57,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:05,21.6,54.9,67.3,2.85,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:08,21.6,55.3,67.1,1.53,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:10,21.6,55.6,67.2,2.61,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:13,,,67.4,1.52,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:16,21.6,55.8,67.0,2.67,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:18,21.6,55.7,40.2,1.54,Watering,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:22,21.6,55.5,67.4,2.58,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:25,21.7,55.4,67.4,1.5,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:28,21.6,55.4,67.4,2.59,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:30,21.6,55.3,67.3,1.6,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:33,21.7,55.2,67.2,2.58,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:36,21.7,55.0,67.2,1.6,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:38,21.7,54.9,67.2,2.58,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:41,21.7,54.7,67.1,1.6,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:44,21.7,54.5,67.2,2.58,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:46,21.7,54.1,67.1,1.58,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:49,21.7,53.5,67.2,2.59,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:52,21.7,53.1,67.0,1.61,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:54,21.7,52.5,67.2,2.58,Idle,Off
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:19:57,21.7,52.1,67.0,1.47,Idle,On
+Time,Temperature (C),Humidity (%),Moisture (%),Light (V),Water Status,Light Status
+17:20:00,21.7,51.7,67.0,2.59,Idle,Off
